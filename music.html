@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music | Barrett Brown</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* MUSIC-SPECIFIC */
+  .music-narrative {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .narrative-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--mid-gray);
+    margin-bottom: 1rem;
+  }
+  .narrative-text p:first-child {
+    font-size: 1.07rem;
+    color: var(--charcoal);
+  }
+
+  /* INSTRUMENT GRID */
+  .instrument-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+
+  .instrument-card {
+    background: white;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    padding: 1.6rem;
+    text-align: center;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .instrument-card:hover { box-shadow: 0 4px 20px rgba(80,0,0,0.08); border-color: var(--gold); }
+
+  .instrument-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+  .instrument-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.4rem; }
+  .instrument-detail { font-size: 0.82rem; color: var(--mid-gray); line-height: 1.5; }
+
+  /* ENSEMBLE LIST */
+  .ensemble-list { display: flex; flex-direction: column; gap: 0; }
+  .ensemble-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  .ensemble-item:last-child { border-bottom: none; }
+  .ensemble-years { font-size: 0.78rem; color: var(--mid-gray); padding-top: 0.2rem; }
+  .ensemble-name-wrap .ensemble-org { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--maroon); margin-bottom: 0.3rem; }
+  .ensemble-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.5rem; }
+  .ensemble-desc { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.6; }
+
+  /* REPERTOIRE TABLE */
+  .rep-section { margin-bottom: 2.5rem; }
+  .rep-section:last-child { margin-bottom: 0; }
+
+  .rep-category-title {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--maroon); font-weight: 600; margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem; border-bottom: 2px solid var(--maroon);
+    display: inline-block;
+  }
+
+  .repertoire-table { width: 100%; border-collapse: collapse; }
+  .repertoire-table th {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--mid-gray); font-weight: 600; padding: 0.6rem 1rem;
+    text-align: left; border-bottom: 1px solid var(--light-gray);
+    background: var(--off-white);
+  }
+  .repertoire-table td {
+    padding: 0.9rem 1rem; font-size: 0.87rem; color: var(--charcoal);
+    border-bottom: 1px solid var(--light-gray); vertical-align: top; line-height: 1.5;
+  }
+  .repertoire-table tr:hover td { background: white; }
+  .repertoire-table td.piece { font-style: italic; font-weight: 500; }
+  .rep-ensemble-tag {
+    display: inline-block;
+    background: var(--off-white); border: 1px solid var(--light-gray);
+    border-radius: 2px; padding: 0.15rem 0.5rem;
+    font-size: 0.73rem; color: var(--mid-gray); font-style: normal;
+  }
+
+  .rep-placeholder {
+    background: var(--off-white); border: 1px dashed var(--light-gray);
+    border-radius: 3px; padding: 1.2rem; text-align: center;
+    font-size: 0.85rem; color: var(--mid-gray); font-style: italic;
+  }
+
+  @media (max-width: 860px) {
+    .music-narrative { grid-template-columns: 1fr; gap: 2rem; }
+    .instrument-grid { grid-template-columns: 1fr 1fr; }
+    .ensemble-item { grid-template-columns: 1fr; gap: 0.4rem; }
+    .repertoire-table th:nth-child(3), .repertoire-table td:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Barrett W. Brown</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="leadership.html">Leadership</a></li>
+    <li><a href="honors.html">Honors</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="music.html" class="active">Music</a></li>
+  </ul>
+</nav>
+
+<div class="page-banner">
+  <div class="page-banner-inner">
+    <p class="page-banner-eyebrow">ePortfolio · Music</p>
+    <h1>Music</h1>
+    <p class="page-banner-sub">A lifelong pursuit of orchestral music — from youth orchestras in San Antonio to the Texas A&M Chamber Orchestra.</p>
+  </div>
+</div>
+
+<div class="page-content">
+
+  <!-- JOURNEY -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">My Story</span>
+      <h2 class="section-title">My Music Journey</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="music-narrative">
+      <div class="narrative-text">
+        <p>
+          Music has been a constant thread running through my life long before engineering became my focus.
+          <!-- 🎵 EDIT THIS SECTION: Replace the paragraphs below with your personal music story. -->
+          I started playing [instrument] at age [X], drawn in by [what attracted you — a teacher, a piece of music, a family influence, etc.].
+        </p>
+        <p>
+          Through my years with the Youth Orchestras of San Antonio, I had the opportunity to [describe what that experience meant to you — performances, growth, community, etc.]. Playing in an ensemble taught me things I couldn't learn anywhere else: how to listen as carefully as you play, how to subordinate individual ego to a collective sound, and how patience and precision compound over time.
+        </p>
+        <p>
+          When I arrived at Texas A&M, continuing to play was never a question. Joining the Chamber Orchestra has been one of the most grounding parts of my college experience — a weekly reminder that engineering isn't the only discipline that rewards rigor and craft. There's something about sight-reading a difficult passage and watching it come together over weeks of rehearsal that maps almost perfectly onto the iterative problem-solving I do in the lab.
+        </p>
+        <p>
+          Music isn't a hobby I compartmentalize from the rest of my life. It's a lens. [Add anything else about how music has shaped you, what you hope to continue doing, or what it means to you going forward.]
+        </p>
+      </div>
+      <div>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <span class="highlight-label">Primary Instrument</span>
+            <span class="highlight-value">[Your Instrument] — [Years Playing] years</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-label">Current Ensemble</span>
+            <span class="highlight-value">Texas A&M Chamber Orchestra</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-label">Former Ensemble</span>
+            <span class="highlight-value">Youth Orchestras of San Antonio</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-label">Also Involved In</span>
+            <span class="highlight-value">Aggie Musical Theater Club</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-label">Years Playing</span>
+            <span class="highlight-value">[X] years</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUMENTS -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">Instruments</span>
+      <h2 class="section-title">Instruments Played</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="instrument-grid">
+      <div class="instrument-card">
+        <div class="instrument-icon">🎻</div>
+        <!-- 🎵 EDIT: Replace with your primary instrument -->
+        <div class="instrument-name">[Primary Instrument]</div>
+        <div class="instrument-detail">[Years] years · Primary instrument<br>[Brief note — e.g., "Played in orchestral and chamber settings"]</div>
+      </div>
+      <div class="instrument-card">
+        <div class="instrument-icon">🎵</div>
+        <!-- 🎵 EDIT: Add a second instrument or delete this card -->
+        <div class="instrument-name">[Second Instrument]</div>
+        <div class="instrument-detail">[Years] years · [Context — self-taught, lessons, etc.]<br>[Brief note]</div>
+      </div>
+      <div class="instrument-card">
+        <div class="instrument-icon">🎼</div>
+        <!-- 🎵 EDIT: Add another or replace with a note about voice, conducting, etc. -->
+        <div class="instrument-name">[Third or Remove]</div>
+        <div class="instrument-detail">Delete this card if you only play one or two instruments, or add a relevant third.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENSEMBLES -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">Ensembles</span>
+      <h2 class="section-title">Orchestras &amp; Groups</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="ensemble-list">
+
+      <div class="ensemble-item">
+        <div class="ensemble-years">[Year]–Present</div>
+        <div class="ensemble-name-wrap">
+          <div class="ensemble-org">Texas A&M University</div>
+          <div class="ensemble-name">Chamber Orchestra</div>
+          <div class="ensemble-desc">
+            <!-- 🎵 EDIT: Describe your role and experience in the Chamber Orchestra -->
+            Performing as [instrument / section] with the Texas A&M Chamber Orchestra. [Add details about rehearsal schedule, performances, repertoire style, or what this ensemble has meant to you.]
+          </div>
+        </div>
+      </div>
+
+      <div class="ensemble-item">
+        <div class="ensemble-years">[Start]–[End]</div>
+        <div class="ensemble-name-wrap">
+          <div class="ensemble-org">San Antonio, Texas</div>
+          <div class="ensemble-name">Youth Orchestras of San Antonio</div>
+          <div class="ensemble-desc">
+            <!-- 🎵 EDIT: Describe your time with YOSA — which ensemble, how long, notable performances, what it meant -->
+            Played with YOSA as [instrument] from [year] to [year]. [Describe the ensemble level, notable concerts or tours, and what the experience contributed to your musical development.]
+          </div>
+        </div>
+      </div>
+
+      <div class="ensemble-item">
+        <div class="ensemble-years">[Year]–Present</div>
+        <div class="ensemble-name-wrap">
+          <div class="ensemble-org">Texas A&M University</div>
+          <div class="ensemble-name">Aggie Musical Theater Club</div>
+          <div class="ensemble-desc">
+            <!-- 🎵 EDIT: Describe your involvement with Aggie Musical Theater -->
+            Involved in musical theater at Texas A&M through the Aggie Musical Theater Club. [Add details about shows you've participated in, your role, and what draws you to musical theater.]
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REPERTOIRE -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">Repertoire</span>
+      <h2 class="section-title">Selected Repertoire</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="rep-section">
+      <div class="rep-category-title">Orchestral</div>
+      <table class="repertoire-table">
+        <thead>
+          <tr>
+            <th>Composer</th>
+            <th>Work</th>
+            <th>Ensemble</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 🎵 EDIT: Replace each row with pieces you've performed. Add or remove rows freely. -->
+          <tr>
+            <td>[Composer Last, First]</td>
+            <td class="piece">[Title of Work, e.g. Symphony No. 5 in C minor]</td>
+            <td><span class="rep-ensemble-tag">[Ensemble Name]</span></td>
+          </tr>
+          <tr>
+            <td>[Composer]</td>
+            <td class="piece">[Title]</td>
+            <td><span class="rep-ensemble-tag">[Ensemble]</span></td>
+          </tr>
+          <tr>
+            <td>[Composer]</td>
+            <td class="piece">[Title]</td>
+            <td><span class="rep-ensemble-tag">[Ensemble]</span></td>
+          </tr>
+          <tr>
+            <td>[Composer]</td>
+            <td class="piece">[Title]</td>
+            <td><span class="rep-ensemble-tag">[Ensemble]</span></td>
+          </tr>
+          <tr>
+            <td>[Composer]</td>
+            <td class="piece">[Title]</td>
+            <td><span class="rep-ensemble-tag">[Ensemble]</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rep-section">
+      <div class="rep-category-title">Chamber / Solo</div>
+      <table class="repertoire-table">
+        <thead>
+          <tr>
+            <th>Composer</th>
+            <th>Work</th>
+            <th>Context</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 🎵 EDIT: Add solo or chamber pieces here -->
+          <tr>
+            <td>[Composer]</td>
+            <td class="piece">[Title, e.g. Sonata in G major]</td>
+            <td><span class="rep-ensemble-tag">[Recital / Studio / Competition]</span></td>
+          </tr>
+          <tr>
+            <td>[Composer]</td>
+            <td class="piece">[Title]</td>
+            <td><span class="rep-ensemble-tag">[Context]</span></td>
+          </tr>
+          <tr>
+            <td>[Composer]</td>
+            <td class="piece">[Title]</td>
+            <td><span class="rep-ensemble-tag">[Context]</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rep-section">
+      <div class="rep-category-title">Musical Theater</div>
+      <table class="repertoire-table">
+        <thead>
+          <tr>
+            <th>Show / Production</th>
+            <th>Role / Involvement</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 🎵 EDIT: Add musical theater productions here -->
+          <tr>
+            <td class="piece">[Show Title]</td>
+            <td>[Role — performer, pit, ensemble, etc.]</td>
+            <td>[Year]</td>
+          </tr>
+          <tr>
+            <td class="piece">[Show Title]</td>
+            <td>[Role]</td>
+            <td>[Year]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rep-placeholder">
+      🎵 &nbsp; This section is ready for you to fill in. Replace each placeholder row with actual pieces and productions from your musical experience.
+    </div>
+
+  </section>
+
+</div>
+
+<footer>
+  <p>Barrett W. Brown · Texas A&M University · Honors ePortfolio · <a href="mailto:brownbarrett02@tamu.edu">brownbarrett02@tamu.edu</a></p>
+</footer>
+
+</body>
+</html>
