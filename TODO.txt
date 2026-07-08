@@ -11,8 +11,6 @@ ACADEMICS:
 RESEARCH Page
 EXPERIENCE:
   redo projects style (place for pics)
-HONORS:
-  style needs a look, consider inluding description of each awards
 
 
 AERO 405 joints
