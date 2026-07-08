@@ -1,0 +1,35 @@
+MAIN:
+  update experience
+  update honors
+  update leadership
+  PICTURES:
+    gather pics
+    put pics on all pages
+  individual sub-pages for special projects
+ACADEMICS:
+  include links to class projects
+RESEARCH Page
+EXPERIENCE:
+  redo projects style (place for pics)
+HONORS:
+  style needs a look, consider inluding description of each awards
+
+
+AERO 405 joints
+link to research
+AERO 321 reverse engineering 
+AERO 307 ?
+AERO 306 Fem code
+ASTR 320 paper
+Pols 209 paper
+447 sim?
+420 paper
+bray actuator testing device
+swri thermal cycle
+swri managment of change
+swri testing equipment installation
+hs ap papers
+AERO 423 constellation
+AERO 422
+AERO 489 
+ENISE internship
