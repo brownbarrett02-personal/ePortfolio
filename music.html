@@ -94,6 +94,15 @@
     font-size: 0.85rem; color: var(--mid-gray); font-style: italic;
   }
 
+  .prose-link {
+    color: var(--maroon);
+    text-decoration: underline;
+    text-decoration-color: rgba(80,0,0,0.35);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s;
+  }
+  .prose-link:hover { text-decoration-color: var(--maroon); }
+
   @media (max-width: 860px) {
     .music-narrative { grid-template-columns: 1fr; gap: 2rem; }
     .instrument-grid { grid-template-columns: 1fr 1fr; }
@@ -143,10 +152,10 @@
           I started playing piano at age 7; my grandparents signed me up for lessons after hearing me pick out familiar tunes on their old piano.
         </p>
         <p>
-          Through my years with the Youth Orchestras of San Antonio, I had the opportunity to accompany world-class soloists, perform Beethoven Symphonies, and perform Gershwin in Carnegie Hall. Playing in an ensemble taught me things I couldn't learn anywhere else: how to listen as carefully as you play, how to subordinate individual ego to a collective sound, and how patience and precision compound over time.
+          Through my years with the <a href="https://www.yosa.org/" target="_blank" rel="noopener" class="prose-link">Youth Orchestras of San Antonio</a>, I had the opportunity to accompany world-class soloists, perform Beethoven Symphonies, and perform Gershwin in Carnegie Hall. Playing in an ensemble taught me things I couldn't learn anywhere else: how to listen as carefully as you play, how to subordinate individual ego to a collective sound, and how patience and precision compound over time.
         </p>
         <p>
-          When I arrived at Texas A&M, continuing to play was never a question. Joining the Chamber Orchestra has been one of the most grounding parts of my college experience, a weekly reminder that engineering isn't the only discipline that rewards rigor and craft. There's something about sight-reading a difficult passage and watching it come together over weeks of rehearsal that maps almost perfectly onto the iterative problem-solving I do in classes and my research.
+          When I arrived at Texas A&M, continuing to play was never a question. Joining the <a href="https://musa.tamu.edu/bands-orchestras/orchestras/" target="_blank" rel="noopener" class="prose-link">Chamber Orchestra</a> has been one of the most grounding parts of my college experience, a weekly reminder that engineering isn't the only discipline that rewards rigor and craft. There's something about sight-reading a difficult passage and watching it come together over weeks of rehearsal that maps almost perfectly onto the iterative problem-solving I do in classes and my research.
         </p>
         <p>
           Music isn't a hobby I compartmentalize from the rest of my life. It's a lens. The teamwork and leadership skills that I have developed in orchestral settings have translated directly into my leadership activities and research. Seriously studying music has allowed me to develop in ways that most people don't get to: making connections between unrelated things, demanding rigor and discipline at every turn, and allowing me to develop a fantastic memory that has aided me in every collegiate course I have taken.
@@ -393,7 +402,7 @@
     </div>
 
     <!-- ── MUSICAL THEATER ── -->
-    <div class="rep-section">
+    <div class="rep-section" id="section-musical-theater">
       <div class="rep-category-title">Musical Theater</div>
       <table class="repertoire-table">
         <thead>
@@ -432,7 +441,8 @@
 </div>
 
 <footer>
-  <p>Barrett W. Brown · Texas A&amp;M University · Honors ePortfolio · <a href="mailto:brownbarrett02@tamu.edu">brownbarrett02@tamu.edu</a></p>
+  <div class="footer-main">Barrett W. Brown · Texas A&amp;M University · Honors ePortfolio · <a href="mailto:brownbarrett02@tamu.edu">brownbarrett02@tamu.edu</a> · <a href="https://www.linkedin.com/in/barrett-brown/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+  <div class="footer-wip">This ePortfolio is a living document — always being updated as my work continues to grow.</div>
 </footer>
 
 <script>

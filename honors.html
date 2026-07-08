@@ -5,6 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Honors | Barrett Brown</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .honors-list { display: flex; flex-direction: column; gap: 0.7rem; width: 100%; }
+
+  .honor-card {
+    background: white;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .honor-card:hover { box-shadow: 0 4px 20px rgba(80,0,0,0.08); }
+  .honor-card::after {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--maroon);
+  }
+  .honor-card.gold::after { background: var(--gold); }
+
+  .honor-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.4rem;
+    cursor: pointer;
+    user-select: none;
+    gap: 1rem;
+  }
+
+  .honor-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.4;
+  }
+
+  .honor-caret {
+    font-size: 0.6rem;
+    color: var(--mid-gray);
+    flex-shrink: 0;
+    transition: transform 0.22s ease;
+    line-height: 1;
+  }
+  .honor-card.expanded .honor-caret { transform: rotate(180deg); }
+
+  .honor-desc {
+    font-size: 0.84rem;
+    color: var(--mid-gray);
+    line-height: 1.65;
+    padding: 0.75rem 1.4rem 1rem;
+    border-top: 1px solid var(--light-gray);
+    max-width: 72ch;
+    display: none;
+  }
+  .honor-card.expanded .honor-desc { display: block; }
+
+  .prose-link {
+    color: var(--maroon);
+    text-decoration: underline;
+    text-decoration-color: rgba(80,0,0,0.35);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s;
+  }
+  .prose-link:hover { text-decoration-color: var(--maroon); }
+
+  @media (max-width: 860px) {
+    .honors-list { gap: 0.5rem; }
+  }
+</style>
 </head>
 <body>
 
@@ -32,61 +103,175 @@
 
 <div class="page-content">
 
+  <!-- TAMU HONORS -->
   <section>
     <div class="section-header">
       <span class="section-label">University</span>
-      <h2 class="section-title">Texas A&M Honors &amp; Scholarships</h2>
+      <h2 class="section-title">Texas A&amp;M Honors &amp; Scholarships</h2>
       <div class="section-line"></div>
     </div>
-    <div class="honors-grid">
-      <div class="honor-pill">President's Endowed Scholarship</div>
-      <div class="honor-pill">National Merit Scholarship</div>
-      <div class="honor-pill">Craig &amp; Galen Brown Foundation Scholarship</div>
-      <div class="honor-pill">Bradley L. Worsham '88 Scholarship in Aerospace Engineering</div>
-      <div class="honor-pill">Shakira and Cade Hensley '98 Endowed Scholarship — College of Engineering</div>
-      <div class="honor-pill">Patrick A. and Carol J. Gibson Scholarship in Aerospace Engineering</div>
-      <div class="honor-pill">Joanne and Edward "Pete" Aldridge '60 Endowed Scholarship — Aerospace Engineering</div>
-      <div class="honor-pill">George M and Mary B Lewis Merit Scholarship</div>
-      <div class="honor-pill">College of Engineering Dean's Honor Roll (Fall 2022, Spring 2024)</div>
-      <div class="honor-pill">Distinguished Student, College of Engineering (Fall 2024)</div>
-      <div class="honor-pill">Alamo Heights United Methodist Church Scholarship</div>
+    <div class="honors-list">
+
+      <div class="honor-card gold">
+        <div class="honor-card-header">
+          <div class="honor-name">Craig &amp; Galen Brown Foundation Scholarship</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">The <a href="https://brownfound.org/" target="_blank" rel="noopener" class="prose-link">Brown Foundation</a> provides undergraduate scholarships to students who are high-achieving, well-rounded, National Merit students who are pursuing STEM and Business Degrees at Texas A&M. Brown Scholars must achieve leadership positions and provide community service alongside their educational pursuits. Brown Scholar graduates have assumed leadership positions in their chosen professions, and include engineers, physicians, academic researchers, inventors, entrepreneurs, CEO’s, executive managers, business owners, community volunteers, and leaders.</div>
+      </div>
+
+      <div class="honor-card gold">
+        <div class="honor-card-header">
+          <div class="honor-name">National Merit Scholarship</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">The <a href="https://www.nationalmerit.org/" target="_blank" rel="noopener" class="prose-link">National Merit Scholarship Program</a> is an annual academic competition among high school students for recognition and college undergraduate scholarships that began in 1955. The program is conducted by National Merit Scholarship Corporation (NMSC®), a not-for-profit organization that operates without government assistance. United States high school students enter the National Merit Scholarship Program by taking the Preliminary SAT/National Merit Scholarship Qualifying Test (PSAT/NMSQT®), which serves as an initial screen of over 1.3 million entrants each year, and by meeting published program entry and participation requirements.</div>
+      </div>
+
+      <div class="honor-card gold">
+        <div class="honor-card-header">
+          <div class="honor-name">President's Endowed Scholarship</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">Since 1968, the <a href="https://www.txamfoundation.com/news/it-truly-changed-my-life-witness-the-power-of-the-presidents-endowed-scholarship-program.aspx" target="_blank" rel="noopener" class="prose-link">President’s Endowed Scholarship (PES)</a> program has been a key to unlocking students’ true potential at Texas A&M University, inspiring outstanding scholars to make Aggieland their home by covering the costs associated with collegiate education. Each year, the PES program helps attract the best and brightest to Texas A&M, offering recognition that goes beyond financial support and affirming students’ character and commitment to their future. What sets this program apart is that financial need is not a factor when evaluating applicants. Instead, the program honors those who have already demonstrated academic merit, leadership qualities and social excellence. To date, more than 8,800 students from across the nation — including 1,372 current students — have attended Texas A&M thanks to a PES, making it one of the university’s most respected awards and a cornerstone of student success.</div>
+      </div>
+
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-name">Other Texas A&M Scholarships</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">Bradley L. Worsham '88 Scholarship in Aerospace Engineering<br>
+                                Patrick A. and Carol J. Gibson Scholarship in Aerospace Engineering<br>
+                                Joanne and Edward "Pete" Aldridge '60 Endowed Scholarship — Aerospace Engineering<br>
+                                Shakira and Cade Hensley '98 Endowed Scholarship — College of Engineering<br>
+                                Chip Amrock ‘75 Scholarship - College of Engineering<br>
+                                Susan & John Richardson ‘71 Scholarship<br>
+                                Barbara ‘88 & Mark Craig Scholarship<br>
+                                George M and Mary B Lewis Merit Scholarship<br>
+                                San Antonio Aggie Mother’s Club 90th Anniversary Scholarship
+        </div>
+      </div>
+
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-name">College of Engineering Dean's Honor Roll (Fall 2022, Spring 2023, Fall 2023, Spring 2026)</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">This designation is reserved for those students who achieve a semester GPA of 3.75 or better across engineering courses. This award is described by the Texas A&M College of Engineering as "particularly noteworthy considering the rigorous and demanding nature of [the] engineering curriculum".</div>
+      </div>
+
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-name">Distinguished Student, College of Engineering (Fall 2024, Spring 2025, Fall 2025)</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">This designation is reserved for those students who achieve a semester GPA of 3.50 or better across engineering courses. This award is described by the Texas A&M College of Engineering as "particularly noteworthy considering the rigorous and demanding nature of [the] engineering curriculum".</div>
+      </div>
+
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-name">Alamo Heights United Methodist Church Scholarship</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">The Alamo Heights United Methodist Church (AHUMC) Scholarship is awarded to university students who, in their time as a member of the AHUMC congregation, exceptionally served the congregation and community through a variety of acts.</div>
+      </div>
+
     </div>
   </section>
 
+  <!-- PROFESSIONAL -->
   <section>
     <div class="section-header">
       <span class="section-label">Professional</span>
       <h2 class="section-title">Memberships &amp; Programs</h2>
       <div class="section-line"></div>
     </div>
-    <div class="honors-grid">
-      <div class="honor-pill">AIAA — National Member (Jan 2025–Present)</div>
-      <div class="honor-pill">AIAA — Texas A&M Local Chapter (Jan 2025–Present)</div>
-      <div class="honor-pill">NASA High School Aerospace Scholars</div>
-      <div class="honor-pill">MSC Conway-Fitzhugh Honors International Leadership Seminar (2022 &amp; 2024)</div>
+    <div class="honors-list">
+
+      <div class="honor-card gold">
+        <div class="honor-card-header">
+          <div class="honor-name">American Institute of Aeronautics and Astronautics — Member (Jan 2025–Present)</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">Member of both the AIAA National Organization and Texas A&amp;M Local Chapter.</div>
+      </div>
+
+      <div class="honor-card gold">
+        <div class="honor-card-header">
+          <div class="honor-name">MSC Conway-Fitzhugh Honors International Leadership Seminar (2022 &amp; 2024 - Chaperone)</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">The <a href="https://mscprograms.tamu.edu/conway-fitzhugh-international-honors-leadership-seminar/" target="_blank" rel="noopener" class="prose-link">MSC Conway-Fitzhugh International Honors Leadership Seminar</a>, through a competitive process, selects up to 24 high-achieving Texas A&M freshmen to take part in an international, two-week, personal and leadership development program in following their first college semester. The seminar begins with pre-trip orientation sessions in the fall and culminates with sessions throughout various locations during travel in Italy.</div>
+      </div>
+
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-name">NASA High School Aerospace Scholars</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc"><a href="https://www.nasa.gov/learning-resources/texas-aerospace-scholars/" target="_blank" rel="noopener" class="prose-link">Texas Aerospace Scholars</a>, or TAS, (formerly High School Aerospace Scholars/HAS) offers Texas high school students a unique opportunity to explore STEM concepts and discover how their interests connect to real NASA work. Through interactive online lessons, engineering design challenges, and opportunities to collaborate with NASA professionals, students deepen their understanding of space exploration and develop practical STEM skills. TAS supports students as they explore potential aerospace and STEM pathways, and become part of a statewide community of curious, motivated learners.</div>
+      </div>
+
     </div>
   </section>
 
-
+  <!-- HIGH SCHOOL -->
   <section>
     <div class="section-header">
       <span class="section-label">Secondary Education</span>
       <h2 class="section-title">High School Honors</h2>
       <div class="section-line"></div>
     </div>
-    <div class="honors-grid">
-      <div class="honor-pill">Valedictorian — MacArthur High School, Rank 1/480</div>
-      <div class="honor-pill">Summa Cum Laude · GPA: 117.6</div>
-      <div class="honor-pill">AP Capstone Diploma</div>
-      <div class="honor-pill">AP Scholar with Distinction (July 2022)</div>
-      <div class="honor-pill">AP Scholar with Distinction (July 2021)</div>
-  </section>  
+    <div class="honors-list">
+
+      <div class="honor-card gold">
+        <div class="honor-card-header">
+          <div class="honor-name">Valedictorian — MacArthur High School, Rank 1/480</div>
+        </div>
+      </div>
+
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-name">Summa Cum Laude · GPA: 117.6</div>
+        </div>
+      </div>
+
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-name">AP Capstone Diploma</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc"><a href="https://apcentral.collegeboard.org/courses/ap-capstone" target="_blank" rel="noopener" class="prose-link">AP Capstone</a> is a diploma program based on two yearlong AP courses: AP Seminar and AP Research. These courses are designed to complement other AP courses that the AP Capstone student may take. Instead of teaching specific subject knowledge, AP Seminar and AP Research use an interdisciplinary approach to develop the critical thinking, research, collaboration, time management, and presentation skills students need for college-level work.</div>
+      </div>
+
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-name">AP Scholar with Distinction (2021, 2022)</div>
+          <span class="honor-caret">▼</span>
+        </div>
+        <div class="honor-desc">Every fall, the AP Program recognizes high school students who have demonstrated outstanding college-level achievement through their performance on multiple AP Exams. AP Scholar with Distinction is Granted to students who receive an average score of at least 3.5 on all AP Exams taken, and scores of 3 or higher on five or more of these exams.</div>
+      </div>
+
+    </div>
+  </section>
 
 </div>
 
 <footer>
-  <p>Barrett W. Brown · Texas A&M University · Honors ePortfolio · <a href="mailto:brownbarrett02@tamu.edu">brownbarrett02@tamu.edu</a></p>
+  <div class="footer-main">Barrett W. Brown · Texas A&M University · Honors ePortfolio · <a href="mailto:brownbarrett02@tamu.edu">brownbarrett02@tamu.edu</a> · <a href="https://www.linkedin.com/in/barrett-brown/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+  <div class="footer-wip">This ePortfolio is a living document — always being updated as my work continues to grow.</div>
 </footer>
+
+<script>
+(function () {
+  document.querySelectorAll('.honor-card-header').forEach(function (header) {
+    header.addEventListener('click', function () {
+      header.closest('.honor-card').classList.toggle('expanded');
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
